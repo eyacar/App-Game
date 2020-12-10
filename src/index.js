@@ -60,7 +60,7 @@ const Nav =()=> {
     {Add===true?
     <>
     <span onClick={()=> {SetPath(false);SetPathP(false)}}><Dropdown.Item>Game</Dropdown.Item></span>
-    <span onClick={()=> SetPathP(true)}><Dropdown.Item>Posiciones</Dropdown.Item></span>
+    <span onClick={()=> {SetPath(false);SetPathP(true)}}><Dropdown.Item>Posiciones</Dropdown.Item></span>
     <span onClick={()=> SetPath(true)}><Dropdown.Item>Reglas</Dropdown.Item></span>
     </>
     :

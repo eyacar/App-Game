@@ -11,11 +11,12 @@ function Tabla(cadena){
 var C = [];
 var E = [];
 var P = [];
+if(cadena){
 for(var i = 0; i < cadena.length; i++) {
 if (cadena[i] === 'p') P.push(i);
 if (cadena[i] === 'c') C.push(i);
 if (cadena[i] === 'e') E.push(i);
-}
+}}
 SetPlayer(P.length);SetEmpate(E.length);SetComputer(C.length)
 }
 
@@ -45,17 +46,22 @@ Tabla(props.match)
     <td>{Empate}</td>
     </tr>
     <tr>
-    <td>Copmuter</td>
+    <td>Computer</td>
     <td>{Computer}</td>
     <td>{Player}</td>
     <td>{Empate}</td>
     </tr>
   </tbody>
 </Table>
-<h1>Va ganando:  
+{Player ===0 && Computer===0?
+<h1>DEBE HACER LA PRIMERA JUGADA</h1>:
+Player === Computer?
+<h1>Empate</h1>
+:<h1>Va ganando:  
 {Player > Computer?
 ' "'+props.player+'"':' "Computer"'}
 </h1>
+}
 </div>  
 </div>
 </div>  
